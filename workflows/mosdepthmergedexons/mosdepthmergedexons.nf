@@ -15,12 +15,12 @@ params.outname = "out" // Prefix for output files that contain all samples' mosd
 // GTFtools parameters
 params.refname = "ref" // Prefix for output file containing merged exons - i.e. reference genome name
 params.chrs = "I,II,III,IV,V,X,MtDNA" // Chromosomes to process exons/genes for - need to match the GTF. Default is for C. elegans ws276
-params.gtftoolsdir = "/storage/coda1/p-apaaby3/0/shared/software/GTFtools_0.8.5" // Directory containing GTF tools python script gtftools.py
+params.gtftoolsdir = "GTFtools_0.8.5" // Directory containing GTF tools python script gtftools.py
 // mosdepth parameters
 params.flag = "1796" // --flag (SAM flag bits to exclude) argument for mosdepth
 params.mapq = "0" // -Q, mapq threshold argument for mosdepth, threshold below which read will be excluded
 // Summary R script parameters
-params.rscriptdir = "~/rnaseqgitrepo/alignment" // Directory containing exploregenecoverage_fromexons.R
+params.rscriptdir = "../.." // Directory containing exploregenecoverage_fromexons.R
 params.gff = "" // Path to *genes only* gff3 file containing info on all genes from the GTF
 params.gsubset = '' // OPTIONAL Path to no-header list of genes to run summary R script for - SUBSET of all genes. It will also be run for all genes.
 params.gsubsetname = "" // OPTIONAL name of gene subset for output filenaming. Provide if provide --gsubset
