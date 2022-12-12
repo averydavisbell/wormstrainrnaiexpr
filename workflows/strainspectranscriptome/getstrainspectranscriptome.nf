@@ -10,17 +10,17 @@ Creation of strain-specific transcriptomes and indices
 // Inputs: input/output related
 params.strainlist = "" // Path to one-column file with strains to process (one per line). These must be column headers in VCFs and will be used for output labelling as well.
 params.outputdir = "" // parent output directory
-params.snpvcf = "/storage/coda1/p-apaaby3/0/shared/datasets/cendr-data/vcfs-20210121/WI.20210121.hard-filter.isotype.snpsonly.vcf.gz" // VCF containing all SNPs (only) for all strains of interest vs. reference genome of interest
-params.indelvcf = "/storage/coda1/p-apaaby3/0/shared/datasets/cendr-data/vcfs-20210121/WI.20210121.hard-filter.isotype.indelsonly.vcf.gz" // VCF containing all INDELs (only) for all strains of interest vs. reference genome of interest
-params.reffasta = "/storage/coda1/p-apaaby3/0/shared/referenceresources/celegans_n2_ws276/c_elegans.PRJNA13758.WS276.genomic.fa" // FASTA reference genome - for strain-specific genome creation; what variants were called against. Should be unzipped
-params.refgtf = "/storage/coda1/p-apaaby3/0/shared/labmembers/abell65/rnaomnibus/genecountquant/emase/ws276_20210121cendr/genomeinfo/c_elegans.PRJNA13758.WS276.canonical_geneset_nounderscoretranscriptids.gtf" // GTF file for reference genome.  Transcripts must NOT have underscores in their name if salmon is to be run through EMASE. Modify transcript names to exclude them if necessary.
+params.snpvcf = "WI.20210121.hard-filter.isotype.snpsonly.vcf.gz" // VCF containing all SNPs (only) for all strains of interest vs. reference genome of interest
+params.indelvcf = "WI.20210121.hard-filter.isotype.indelsonly.vcf.gz" // VCF containing all INDELs (only) for all strains of interest vs. reference genome of interest
+params.reffasta = "c_elegans.PRJNA13758.WS276.genomic.fa" // FASTA reference genome - for strain-specific genome creation; what variants were called against. Should be unzipped
+params.refgtf = "c_elegans.PRJNA13758.WS276.canonical_geneset_nounderscoretranscriptids.gtf" // GTF file for reference genome.  Transcripts must NOT have underscores in their name if salmon is to be run through EMASE. Modify transcript names to exclude them if necessary.
 params.idx = 'salmon' // Which index to build? Possible values: 'bowtie2', 'salmon', 'all' (builds both), 'none' (builds none)
 params.salmdecoy = 'no' // 'yes' or 'no' - add REFERENCE genome sequence as decoy sequence for salmon index building?
 
 // Inputs: organizational
-params.g2gtoolsconda = '/storage/home/hcoda1/2/abell65/.conda/envs/g2gtools' // path to python 2 conda environment where g2gtools properly set up
-params.procgtfscriptdir = '/storage/coda1/p-apaaby3/0/shared/labmembers/abell65/scripts/rnaseq/ase/processdiptranscriptomes' // Directory containing Python GTF worker scripts gtfnonchroverlaps.py and gtftoemasegenemapping.py
-params.salmonenv = '/storage/home/hcoda1/2/abell65/.conda/envs/salmon' // path to conda environment where salmon is installed
+params.g2gtoolsconda = '.conda/envs/g2gtools' // path to python 2 conda environment where g2gtools properly set up
+params.procgtfscriptdir = '.' // Directory containing Python GTF worker scripts gtfnonchroverlaps.py and gtftoemasegenemapping.py
+params.salmonenv = '.conda/envs/salmon' // path to conda environment where salmon is installed
 
 // Housekeeping:  create output directories
 outdir = file(params.outputdir)
