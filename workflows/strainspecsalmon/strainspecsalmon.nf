@@ -13,7 +13,7 @@ params.outputdir = "" // Parent output directory. Will be created if doesn't exi
 params.fastqdir = "" // Directory containing all fastq.gz files to process. One or more per sample.
 
 // Inputs: Tunable parameters for trimming
-params.trimmodir = "/storage/coda1/p-apaaby3/0/shared/software/trimmomatic-0.39" // Path to trimmomatic v0.39 directory containing jar file and adapters directory (which itself contains TruSeq3-SE.fa).
+params.trimmodir = "trimmomatic-0.39" // Path to trimmomatic v0.39 directory containing jar file and adapters directory (which itself contains TruSeq3-SE.fa).
 params.trimmoseedmism = 1 // Input to trimmomatic ILLUMINACLIP. How many of 16 bp can mismatch and still be counted as match.
 params.trimmoadapclipthresh = 12 // Input to trimmomatic ILLUMINACLIP. How accurate match between adapter sequence and read must be. Each correct base adds 0.6. They recommend 7-15 (12 bases needed for 7, 25 for 15).
 
@@ -21,7 +21,7 @@ params.trimmoadapclipthresh = 12 // Input to trimmomatic ILLUMINACLIP. How accur
 params.slibtype = "SR" // salmon --libtype option matching the library being aligned here
 
 // Inputs: organizational
-params.salmonenv = '/storage/home/hcoda1/2/abell65/.conda/envs/salmon' // path to conda environment where salmon is installed
+params.salmonenv = '.conda/envs/salmon' // path to conda environment where salmon is installed
 
 // Housekeeping:  create output directories
 // Alignment & related info
