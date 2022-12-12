@@ -31,8 +31,8 @@ gotermplot<-function(pdata, facetby = "Strain", mytitle = ""){
 
 
 #### Get in data ####
-mydir<-"~/Dropbox (GaTech)/BioSci-Paaby-Ext/DifferentialExpressionRNAi/20220105_ADB_RNAiRNASeqSalmonStrainSpec_lrts_ws276_20210121cendr/enrichment/20220111_initial/"
-myodir<-"~/Dropbox (GaTech)/BioSci-Paaby-Ext/DifferentialExpressionRNAi/20220105_ADB_RNAiRNASeqSalmonStrainSpec_lrts_ws276_20210121cendr/enrichment/20220111_initial/alltogether/"
+mydir<-"/path/to/wormbasegsea/results" # input directory path
+myodir<-"out"	# output directory path
 
 compsets<-data.table(Strain = rep(c("N2", "JU1088", "EG4348", "CB4856", "QX1211"), each = 6),
                      Comparison = rep(rep(c("PAR1vsCTR", "POS1vsCTR"), each = 3), 5),
